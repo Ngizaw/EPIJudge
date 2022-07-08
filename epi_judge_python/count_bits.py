@@ -3,7 +3,16 @@ from test_framework import generic_test
 
 def count_bits(x: int) -> int:
     # TODO - you fill in here.
-    return 0
+    #  1011 - 11
+    #&    1
+
+    #mask the least significant bit, count if 1, then discard
+    count = 0
+    while x:
+        count += x & 1
+        x >>= 1
+
+    return count
 
 
 if __name__ == '__main__':
